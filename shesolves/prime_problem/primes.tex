@@ -1,0 +1,104 @@
+%&latex
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+%+Title
+\section{Problem Statement.}
+\paragraph{}
+In her quest to rule the world, Meriem now have to face the lord of the dark world.
+In order to defeat this monster Meriem must find K prime numbers that sum to the
+magic number N. Meriem remembered Goldbach's conjecture and thought that it could help her.
+\paragraph{}
+your task now is to help her find K primes that sum to N.
+\paragraph{}
+\textbf{definition of a prime.}
+A prime number (or prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself
+(like 2,3,5,7,11 ...)
+\paragraph{}
+\textbf{Goldbach's conjecture.} states that any even number (greater than 2) is a sum of two primes.
+$$ \forall\ 2<n\ \ \exists\  p1,p2\ such\ that\  p1+p2=n $$
+where n is even and p1 , p2 are two primes. 
+this conjecture have been proven to hold for any even number (greater than 2) less than $10^{18}$
+\paragraph{}
+can you help meriem find K primes such that their sum = N, or say that they dont exist?
+\section{Input.}
+the only input will be the magic number n and k the number of primes in that order.
+$$4\le N \le 2500\ \  and\ \  2 \le K \le 1000.$$
+
+\section{Output.}
+
+print out K prime numbers that sum to N. or if this is not possible print "Impossible" without the quotes.
+
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+2036 4
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+509 509 509 509 
+\end{lstlisting}
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+1473 3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+13 541 919
+\end{lstlisting}
+\subsection{example 3}
+Input:
+\begin{lstlisting}[language=Python]
+1000 1000
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+Impossible
+\end{lstlisting}
+\subsection{example 4}
+Input:
+\begin{lstlisting}[language=Python]
+15 3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+3 7 5
+\end{lstlisting}
+
+
+\end{document}
+

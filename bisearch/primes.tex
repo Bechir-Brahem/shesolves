@@ -1,0 +1,86 @@
+%&latex
+\documentclass[8pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+%+Title
+\section{Problem Statement.}
+\paragraph{}
+Sandra is a strong independant woman. she loves shopping so much that she decided to spend at least S dinars to buy clothes.
+\paragraph{}
+there are n different dresses each one with a price $p_i$ ($1<=i<=n$).
+Help Sandra find the minimum integer k so that whatever index j ($1<=j<=n-k+1$) she chooses it is guaranteed 
+that the sum of coins she will collect ($p_j$ + ... + $p_{j+k-1}$) will be greater than or equal to S.
+if Sandra can never collect more than the sum S print "impossible"
+\section{Input.}
+you will be given as input n ($1<=n<=10^5$) the number of dresses. S ($1<=10^6$) the amount she has to spend.
+and n numbers $p_i$ ($0<=p_i<=10^5$) representing the price of the i-th dress.
+\section{Output.}
+print k if it exists and "impossible" if it doesn't exist.
+
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+8 5
+1 0 4 5 0 0 2 1
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+5
+\end{lstlisting}
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+6 1
+1 1 1 1 1 1
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+1
+\end{lstlisting}
+\subsection{example 3}
+Input:
+\begin{lstlisting}[language=Python]
+4 10
+3 1 1 2
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+impossible
+\end{lstlisting}
+
+
+\end{document}
+
