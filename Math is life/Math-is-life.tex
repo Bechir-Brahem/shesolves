@@ -1,0 +1,65 @@
+
+%&latex
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{Math is life}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+\paragraph{}
+Welcome to shesolves!
+Let’s start by testing your advanced mathematical skills, shall we?
+\paragraph{}
+We have two integers: A and B, can you find the largest number among A+B, A-B, A*B ?
+\paragraph{}
+\section{Input}
+$$ -100\le A \le 100 $$
+$$ -100\le B \le 100 $$
+\section{Output.}
+Print the largest number among A+B, A-B, A*B
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+-13 3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+-10
+\end{lstlisting}
+\end{document}
+
