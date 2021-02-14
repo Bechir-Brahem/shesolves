@@ -1,0 +1,65 @@
+%&latex
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{5 Dinar Coins}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+\paragraph{}
+Amir got paid big time from ACM INSAT and now has K 5-Dinar coins.
+\paragraph{}
+If these coins add up to S Dinars or more, print “Rich!”; otherwise, print “Not yet”
+\paragraph{}
+\section{Input.}
+$$ 1\le K \le 100 $$
+$$ 1\le S \le 100,000 $$
+\section{Output.}
+
+If the coins add up to S Dinar or more, print “Yes”; otherwise, print “No”
+
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+2 9
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+Rich!
+\end{lstlisting}
+\end{document}
+
