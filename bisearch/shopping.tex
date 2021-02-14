@@ -1,5 +1,8 @@
 %&latex
 \documentclass[8pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -28,6 +31,7 @@
 	showspaces=false,
 	showstringspaces=false,
 	showtabs=false,
+    numbers=none,
 	tabsize=2
 }
 
@@ -35,9 +39,13 @@
 
 \begin{document}
 %+Title
+\title{shopping}
+ \date{}
+\maketitle
+
 \section{Problem Statement.}
 \paragraph{}
-Sandra is a strong independant woman. she loves shopping so much that she decided to spend at least S dinars to buy clothes.
+Sandra is a strong independant woman. But she loves shopping so much that she decided to spend at least S dinars to buy clothes.
 \paragraph{}
 there are n different dresses each one with a price $p_i$ ($1<=i<=n$).
 Help Sandra find the minimum integer k so that whatever index j ($1<=j<=n-k+1$) she chooses it is guaranteed 

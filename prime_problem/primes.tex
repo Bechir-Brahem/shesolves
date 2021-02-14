@@ -1,5 +1,8 @@
 %&latex
 \documentclass[10pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -22,6 +25,7 @@
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
+    numbers=none,
 	keepspaces=true,
 	numbers=left,
 	numbersep=5pt,
@@ -35,6 +39,10 @@
 
 \begin{document}
 %+Title
+\title{primes}
+ \date{}
+\maketitle
+
 \section{Problem Statement.}
 \paragraph{}
 In her quest to rule the world, Meriem now have to face the lord of the dark world.

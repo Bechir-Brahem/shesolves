@@ -2,6 +2,10 @@
 
 %&latex
 \documentclass[10pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -41,8 +45,8 @@
  \date{}
 \maketitle
 \section{Problem Statement.}
-\paragraph{}
 Sirajeddine is a victim of Obsessive-Compulsive Disorder (OCD). He wants everything to be always tidy(incuding arrays). So when he sees an array that is not completely sorted, his OCD activates !\\
+\\
 Let’s define an “intrusion” as an element that is not in its correct place in the sorted version of the array.\\
 Given N and an array A of numbers of length N, return the number of intrusions.For example, if N = 3 and the array A = [1, 3, 2]:\\
 The sorted version of the array A will be [1, 2, 3] and thus the number of intrusions will be equal to 2. Because the elements 2 and 3 are not in their correct place.
