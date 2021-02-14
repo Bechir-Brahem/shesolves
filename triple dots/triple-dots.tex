@@ -1,0 +1,68 @@
+
+%&latex
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{Triple Dots}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+\paragraph{}
+Sondes is in charge of the recruitement process in her company. She starts by registering the names of the new members.
+However, because of the large number of these members, she decided to cut some corners.
+\paragraph{}
+When a new member with the name S decides to join, if the length of his name is less than or equal to K, she will write out his/her full name, but if the name is longer than K, she will write the first K characters of the name and append three dots (...).\\
+For example, when K = 3 and she receives the name “Ahmed” she will register him as “Ahm...”\\
+And when K = 5 and she receives the name “Aycha” she will register her as “Aycha”\\
+\paragraph{}
+Given K and the name S, find out how X will register the name S.
+\paragraph{}
+\section{Constraints.}
+$$ 1\le K \le 100 $$
+$$ 1\le length(S) \le 100 $$
+\section{Output.}
+Print the string as stated in the problem statement.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3 Ahmed
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+Ahm...
+\end{lstlisting}
+\end{document}
