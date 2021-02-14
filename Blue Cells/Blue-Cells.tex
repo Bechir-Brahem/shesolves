@@ -1,0 +1,73 @@
+
+
+
+%&latex
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{Blue Cells}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+\paragraph{}
+There is a 2-D matrix of R rows and C columns, all of its cells are white initially.
+\paragraph{}
+X will choose x of the rows and y of the columns, and paint all of the cells contained in those rows or columns with blue paint. When a row is painted, all of its cells are painted (same for a column).\\
+Now X is wondering; how many white cells will remain?
+\section{Input}
+$$ 1\le R \le 100 $$
+$$ 1\le C \le 100 $$
+$$ 0\le x \le R $$
+$$ 0\le y \le C $$
+\section{Output.}
+Print the number of white cells that will remain.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3 2
+2 1
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+1
+\end{lstlisting}
+The matrix has 3 rows and 2 columns(6 cells in total).\\
+X painted 2 rows and 1 column in blue, so only 1 cell will remain white.
+
+
+\end{document}
+
