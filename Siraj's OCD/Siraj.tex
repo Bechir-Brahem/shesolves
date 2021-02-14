@@ -1,0 +1,67 @@
+
+
+%&latex
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{Siraje's OCD}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+\paragraph{}
+Sirajeddine is a victim of Obsessive-Compulsive Disorder (OCD). He wants everything to be always tidy(incuding arrays). So when he sees an array that is not completely sorted, his OCD activates !\\
+Let’s define an “intrusion” as an element that is not in its correct place in the sorted version of the array.\\
+Given N and an array A of numbers of length N, return the number of intrusions.For example, if N = 3 and the array A = [1, 3, 2]:\\
+The sorted version of the array A will be [1, 2, 3] and thus the number of intrusions will be equal to 2. Because the elements 2 and 3 are not in their correct place.
+\paragraph{}
+\section{Input}
+$$ 1\le N \le 100 $$
+$$ 1\le A_i \le N $$
+\section{Output.}
+Print the number of intrusions in the array.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3
+1 3 2
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+2
+\end{lstlisting}
+\end{document}
+
