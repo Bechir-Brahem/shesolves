@@ -1,0 +1,76 @@
+%&latex
+\documentclass[10pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{Only One Clue}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+\paragraph{}
+There are 201 stones placed on a line. The coordinates of these stones are -100, -99, -98, ..... -1, 0, 1, 2, .... 99, 100\\
+Among them, only K consecutive stones are painted black, while the others are painted white.\\
+We want you to find out which of the stones can potentially be black, and we’ll give you one clue.\\
+The clue is that the stone with the number X is black!\\
+Print all the coordinates of the stones that potentially can be painted black, in ascending order.
+\section{Input}
+$$ 1\le K \le 50 $$
+$$ -20\le X \le 20 $$
+\section{Output.}
+Print all the coordinates of the stones that potentially can be painted black, in ascending order, with spaces in between.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3 7
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+5 6 7 8 9
+\end{lstlisting}
+We know that there are three stones painted black, and the stone at coordinate 7 is painted black. There are three possible cases:
+\begin{itemize}
+\item The three stones painted black are placed at coordinates 5 , 6, and 7.
+\item The three stones painted black are placed at coordinates 6, 7, and 8.
+\item The three stones painted black are placed at coordinates 7, 8, and 9.
+\end{itemize}
+Thus, five coordinates potentially contain a stone painted black: 5 , 6, 7, 8, and 9.
+
+
+\end{document}
+
