@@ -1,0 +1,65 @@
+%&latex
+\documentclass[10pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\title{BAD 7!}
+ \date{}
+\maketitle
+\section{Problem Statement.}
+You hate the number 7 right? Me too!\\
+Let us count the number of integers without the digit 7 in both \textbf{decimal} (base 10) and \textbf{octal} (base 8).\\
+How many such integers are there between 1 and N?
+\section{Input}
+$$ 1\le N \le 100 $$
+\section{Output.}
+Print an integer representing the answer.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+20
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+17
+\end{lstlisting}
+Among the integers between 1 and 20, 7 and 17 contain the digit 7 in decimal. Also , 7 and 15 contain the digit 7 in octal.\\
+And so , the 17 integers other than 7, 15, and 17 meet the requirements.
+\end{document}
+
