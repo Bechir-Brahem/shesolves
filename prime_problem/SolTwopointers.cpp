@@ -95,8 +95,8 @@ int main ()
     ios_base::sync_with_stdio (false);
     cin.tie (nullptr);
     cout.tie (nullptr);
-    freopen("random","r",stdin);
-    int times = 102;
+    // freopen("random","r",stdin);
+    int times = 1;
     while (times--) {
         solve ();
     }
