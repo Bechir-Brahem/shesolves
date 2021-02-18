@@ -70,7 +70,7 @@ bool found=false;
     int i,j;
     for( i=0;i<v.size() ;i++)
     {
-        for( j=i+1;j<v.size();j++)
+        for( j=i;j<v.size();j++)
         {
             if(v[i]+v[j]==n)
             {
