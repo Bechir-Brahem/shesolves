@@ -1,0 +1,81 @@
+
+%&latex
+\documentclass[10pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\begin{center}
+    \Huge { \textbf{Ons and factorials}}\\
+    \normalsize  { input:  STDIN}\\
+    \normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+Sandra likes to count the number of consecutive zeros at the end of factorials\\
+Given an integer N , return the number of trailing zeroes in N! 
+$$ n!= n*(n-1)*(n-2)...1 $$
+e.g: $ 5!=5*4*3*2*1=120 $
+\paragraph{}
+\section{Input}
+$$ 1\le N \le 100000 $$
+\section{Output.}
+the number of trailing zeroes in N!.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+0
+\end{lstlisting}
+
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+5
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+1
+\end{lstlisting}
+\textbf{Explanation 1:} 3! = 6, no trailing zero.\\
+\textbf{Explanation 2:} 5! = 120, one trailing zero.
+\end{document}
+
