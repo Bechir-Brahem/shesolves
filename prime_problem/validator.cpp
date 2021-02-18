@@ -68,8 +68,7 @@ int main(int argc, char *argv[]) {
     const string path = argv[3] + string{"judgement.txt"};
     freopen(path.c_str(), "w", stdout);
     sieve();
-    int t;
-    input >> t;
+    int t=1;
     for (int tt = 1; tt <= t; tt++) {
         int n, k;
         input >> n >> k;
