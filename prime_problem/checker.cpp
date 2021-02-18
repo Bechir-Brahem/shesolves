@@ -91,6 +91,7 @@ int main() {
         int n, k;
         input >> n >> k;
         string res;
+    READ_LINE:
         getline(output, res);
         toLower(res);
         if (!output) {
@@ -98,6 +99,9 @@ int main() {
                     "in test "
                  << tt << " n = " << n << " k = " << k << endl;
             exit(EXIT_SUCCESS);
+        }
+        if (res == "") {
+            goto READ_LINE;
         }
         if (res == "impossible") {
             if (possible(n, k)) {
