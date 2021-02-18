@@ -66,10 +66,24 @@ bool possible(int n, int k) {
 /*     return mem[{n, k}] = false; */
 /* } */
 
+void toLower(string &str) {
+    for (char &c : str) {
+        c = (char)tolower(c);
+    }
+}
+
 int main() {
     fstream input("input"); // input file where to find the test cases
     fstream output(
         "output"); // output file: the result of the team's submission
+    if (!input) {
+        cout << "could not open input file" << endl;
+        exit(EXIT_SUCCESS);
+    }
+    if (!output) {
+        cout << "could not open output file" << endl;
+        exit(EXIT_SUCCESS);
+    }
     sieve();
     int t;
     input >> t;
@@ -78,8 +92,9 @@ int main() {
         input >> n >> k;
         string res;
         getline(output, res);
+        toLower(res);
         if (!output) {
-            cout << "NO\n";
+            cout << "NO: could not read from output\n";
             exit(EXIT_SUCCESS);
         }
         if (res == "impossible") {
