@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
-bool check(int a){
-    return a==7;
-}
+ 
 void solve()
 {
     int A,B,C,K,ans=0;
