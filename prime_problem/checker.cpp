@@ -94,7 +94,9 @@ int main() {
         getline(output, res);
         toLower(res);
         if (!output) {
-            cout << "NO: could not read from output\n";
+            cout << "NO: could not read from output "
+                    "in test "
+                 << tt << " n = " << n << " k = " << k << endl;
             exit(EXIT_SUCCESS);
         }
         if (res == "impossible") {
