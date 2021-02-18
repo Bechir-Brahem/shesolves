@@ -1,0 +1,455 @@
+%&latex
+\documentclass[10pt]{article}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2,
+    numbers=none
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\begin{center}
+    \Huge { \textbf{A: 5 Dinar Coins}} \\ 
+    \normalsize  { input:  STDIN}\\
+    \normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+\paragraph{}
+Amir got paid big time from ACM INSAT and now has K 5-Dinar coins.
+\paragraph{}
+If these coins add up to S Dinars or more he is considered Rich. Your job is to find out if Amir is rich or not.
+\paragraph{}
+\section{Input.}
+$$ 1\le K \le 100 $$
+$$ 1\le S \le 100,000 $$
+\section{Output.}
+
+If the coins add up to S Dinar or more, print “Yes”; otherwise, print “No”
+
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+2 9
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+Rich!
+\end{lstlisting}
+\newpage
+\begin{center}
+    \Huge { \textbf{B: Triple Dots}}\\
+    \normalsize  { input:  STDIN}\\
+    \normalsize{    output: STDOUT}
+
+\end{center}
+
+\section{Problem Statement.}
+\paragraph{}
+Sondes is in charge of the recruitement process in her company. She starts by registering the names of the new members.
+However, because of the large number of these members, she decided to cut some corners.
+\paragraph{}
+When a new member with the name S decides to join, if the length of his name is less than or equal to K, she will write out his/her full name, but if the name is longer than K, she will write the first K characters of the name and append three dots (...).\\
+For example, when K = 3 and she receives the name “Ahmed” she will register him as “Ahm...”\\
+And when K = 5 and she receives the name “Aycha” she will register her as “Aycha”\\
+\paragraph{}
+Given K and the name S, find out how X will register the name S.
+\paragraph{}
+\section{Constraints.}
+$$ 1\le K \le 100 $$
+$$ 1\le length(S) \le 100 $$
+\section{Output.}
+Print the string as stated in the problem statement.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3 Ahmed
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+Ahm...
+\end{lstlisting}
+\newpage
+\begin{center}
+    \Huge { \textbf{C: Ons and factorials}}\\
+    \normalsize  { input:  STDIN}\\
+    \normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+Ons likes to count the number of consecutive zeros at the end of factorials\\
+Given an integer N , return the number of trailing zeroes in N! 
+$$ n!= n*(n-1)*(n-2)...1 $$
+e.g: $ 5!=5*4*3*2*1=120 $
+\paragraph{}
+\section{Input}
+$$ 1\le N \le 100000 $$
+\section{Output.}
+the number of trailing zeroes in N!.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+0
+\end{lstlisting}
+
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+5
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+1
+\end{lstlisting}
+\textbf{Explanation 1:} 3! = 6, no trailing zero.\\
+\textbf{Explanation 2:} 5! = 120, one trailing zero.
+\newpage
+\begin{center}
+    \Huge { \textbf{D: BAD 7!}}\\
+    \normalsize  { input:  STDIN}\\
+    \normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+You hate the number 7 right? Me too!\\
+Let us count the number of integers without the digit 7 in both \textbf{decimal} (base 10) and \textbf{octal} (base 8).\\
+How many such integers are there between 1 and N?
+\section{Input}
+$$ 1\le N \le 100 $$
+\section{Output.}
+Print an integer representing the answer.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+20
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+17
+\end{lstlisting}
+Among the integers between 1 and 20, 7 and 17 contain the digit 7 in decimal. Also , 7 and 15 contain the digit 7 in octal.\\
+And so , the 17 integers other than 7, 15, and 17 meet the requirements.
+\newpage
+\begin{center}
+    \Huge { \textbf{E: Only One Clue}}\\
+    \normalsize  { input:  STDIN}\\
+    \normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+\paragraph{}
+There are 201 stones placed on a line. The coordinates of these stones are -100, -99, -98, ..... -1, 0, 1, 2, .... 99, 100\\
+Among them, only K consecutive stones are painted black, while the others are painted white.\\
+We want you to find out which of the stones can potentially be black, and we’ll give you one clue.\\
+The clue is that the stone with the number X is black!\\
+Print all the coordinates of the stones that potentially can be painted black, in ascending order.
+\section{Input}
+$$ 1\le K \le 50 $$
+$$ -20\le X \le 20 $$
+\section{Output.}
+Print all the coordinates of the stones that potentially can be painted black, in ascending order, with spaces in between.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3 7
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+5 6 7 8 9
+\end{lstlisting}
+We know that there are three stones painted black, and the stone at coordinate 7 is painted black. There are three possible cases:
+\begin{itemize}
+\item The three stones painted black are placed at coordinates 5 , 6, and 7.
+\item The three stones painted black are placed at coordinates 6, 7, and 8.
+\item The three stones painted black are placed at coordinates 7, 8, and 9.
+\end{itemize}
+Thus, five coordinates potentially contain a stone painted black: 5 , 6, 7, 8, and 9.
+\newpage
+\begin{center}
+    \Huge { \textbf{F: The Ink Problem}}\\
+\normalsize  { input:  STDIN}\\
+\normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+Yagami Light is the protagonist of a popular anime show named “Death Note”.\\
+In order to prove his ideals to the world, Yagami decided to eradicate every criminal that exists by using
+his death note (which is a book used to kill people).\\
+He plans to use N notes where each note consumes I ink. Initially, He has an ink limit of L.\\
+Help him find the maximum number of notes he can write.
+\section{Constraints}
+$$ 1\le N \le 100 $$
+$$ 10 \le L \le 200 $$
+\section{Input}
+The first line contains two integers, the size of the array N and the ink limit L.\\
+The second line contains N integers $I_0 I_1 I_2 I_3 ... I_{N-1} $ ($I_j$ corresponds to the $j_{th}$ element in the array
+where $ 1\le I_j \le 200 $).
+\section{Output.}
+Print the maximum number of notes Yagami can write.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+9 190
+10 18 71 22 17 180 52 192 99
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+6
+\end{lstlisting}
+
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+1 140
+142
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+0
+\end{lstlisting}
+\newpage
+\begin{center}
+    \Huge { \textbf{G:That's Magic}}\\
+\normalsize  { input:  STDIN}\\
+\normalsize{    output: STDOUT}
+\end{center}
+
+\section{Problem Statement.}
+A magician has the following three cards:
+\begin{itemize}
+\item A red card with the integer A.
+\item A green card with the integer B.
+\item A blue card with the integer C.
+\end{itemize}
+He can do the following operation \textbf{at most K times} (K times or less)
+\begin{itemize}
+\item Choose one of the three cards and multiply the written integer on it by 2.
+\end{itemize}
+His magic trick is successful if, after the operations, these conditions are satisfied :
+\begin{itemize}
+\item The integer on the green card is \textbf{strictly} greater than the integer on the red card.
+\item The integer on the blue card is \textbf{strictly} greater than the integer on the green card.
+\end{itemize}
+Can the magician perform his trick successfully?\\
+If the magic can be successful, print “You tricked us!”; otherwise, print ”Oh no!”
+
+\section{Input}
+$$ 1\le A \le 10 $$
+$$ 1\le B \le 10 $$
+$$ 1\le C \le 10 $$
+$$ 1\le K \le 20 $$
+\section{Output.}
+If the magic can be successful, print “You tricked us!”; otherwise, print ”Oh no!”
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+7 2 5 3 
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+You tricked us!
+\end{lstlisting}
+The magic will be successful if, for example, he does the following operations:
+\begin{itemize}
+\item First, choose the blue card. The integers on the red, green, and blue cards are now 7, 2, and 10, respectively.
+\item Second, choose the green card. The integers on the red, green, and blue cards are now 7, 4, and 10, respectively.
+\item Third, choose the green card. The integers on the red, green, and blue cards are now 7, 8, and 10, respectively.
+\end{itemize}
+\newpage
+\begin{center}
+    \Huge { \textbf{H: Meriem's Magic}}\\
+\normalsize  { input:  STDIN}\\
+\normalsize{    output: STDOUT}
+\end{center}
+
+\section{Problem Statement.}
+\paragraph{}
+In her quest to rule the world, Meriem now have to face the lord of the dark world.
+In order to defeat this monster Meriem must find K prime numbers that sum to the
+magic number N. Meriem remembered Goldbach's conjecture and thought that it could help her.
+\paragraph{}
+your task now is to help her find K primes that sum to N.
+\paragraph{}
+\textbf{definition of a prime.}
+A prime number (or prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself
+(like 2,3,5,7,11 ...)
+\paragraph{}
+\textbf{Goldbach's conjecture.} states that any even number (greater than 2) is a sum of two primes.
+$$ \forall\ 2<n\ \ \exists\  p1,p2\ such\ that\  p1+p2=n $$
+where n is even and p1 , p2 are two primes. 
+this conjecture have been proven to hold for any even number (greater than 2) less than $10^{18}$
+\paragraph{}
+can you help meriem find K primes such that their sum = N, or say that they dont exist?
+\section{Input.}
+the only input will be the magic number n and k the number of primes in that order.
+$$4\le N \le 2500\ \  and\ \  2 \le K \le 1000.$$
+
+\section{Output.}
+
+print out K prime numbers that sum to N. or if this is not possible print "Impossible" without the quotes.
+
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+2036 4
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+509 509 509 509 
+\end{lstlisting}
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+1473 3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+13 541 919
+\end{lstlisting}
+\subsection{example 3}
+Input:
+\begin{lstlisting}[language=Python]
+1000 1000
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+Impossible
+\end{lstlisting}
+\subsection{example 4}
+Input:
+\begin{lstlisting}[language=Python]
+15 3
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+3 7 5
+\end{lstlisting}
+
+
+
+\newpage
+\begin{center}
+    \Huge { \textbf{I: Blue Cells}}\\
+\normalsize  { input:  STDIN}\\
+\normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+\paragraph{}
+There is a 2-D matrix of R rows and C columns, all of its cells are white initially.
+\paragraph{}
+X will choose x of the rows and y of the columns, and paint all of the cells contained in those rows or columns with blue paint. When a row is painted, all of its cells are painted (same for a column).\\
+Now X is wondering; how many white cells will remain?
+\section{Input}
+$$ 1\le R \le 100 $$
+$$ 1\le C \le 100 $$
+$$ 0\le x \le R $$
+$$ 0\le y \le C $$
+\section{Output.}
+Print the number of white cells that will remain.
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+3 2
+2 1
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+1
+\end{lstlisting}
+The matrix has 3 rows and 2 columns(6 cells in total).\\
+X painted 2 rows and 1 column in blue, so only 1 cell will remain white.
+\newpage
+\begin{center}
+    \Huge { \textbf{J: Shopping}}\\
+\normalsize  { input:  STDIN}\\
+\normalsize{    output: STDOUT}
+\end{center}
+\section{Problem Statement.}
+\paragraph{}
+Sandra is a strong independant woman. But she loves shopping so much that she decided to spend at least S dinars to buy clothes.
+\paragraph{}
+there are n different dresses each one with a price $p_i$ ($1<=i<=n$).
+Help Sandra find the minimum integer k so that whatever index j ($1<=j<=n-k+1$) she chooses it is guaranteed 
+that the sum of coins she will collect ($p_j$ + ... + $p_{j+k-1}$) will be greater than or equal to S.
+if Sandra can never collect more than the sum S print "impossible"
+\section{Input.}
+you will be given as input n ($1<=n<=10^5$) the number of dresses. S ($1<=S<=10^6$) the amount she has to spend.
+and n numbers $p_i$ ($0<=p_i<=10^5$) representing the price of the i-th dress.
+\section{Output.}
+print k if it exists and "impossible" if it doesn't exist.
+
+\section{Examples.}
+\subsection{example 1}
+Input:
+\begin{lstlisting}[language=Python]
+8 5
+1 0 4 5 0 0 2 1
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+5
+\end{lstlisting}
+\subsection{example 2}
+Input:
+\begin{lstlisting}[language=Python]
+6 1
+1 1 1 1 1 1
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+1
+\end{lstlisting}
+\subsection{example 3}
+Input:
+\begin{lstlisting}[language=Python]
+4 10
+3 1 1 2
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=Python]
+impossible
+\end{lstlisting}
+
+
+
+
+\end{document}
