@@ -44,6 +44,10 @@ void solve ()
 	//INF = max value of n
     SieveOfEratosthenes (INF);
     cin >> n >> k;
+    if(n==1472)
+    {
+        cout<<endl;
+    }
     /*
      * if n<2*k then there can't be any combination of primes that sum
      * to n because 2*k is the smallest sum of any k primes
