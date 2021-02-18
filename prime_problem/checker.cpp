@@ -1,71 +1,131 @@
-#include <algorithm>
+/* checker to test team's submission
+ * reads the test cases from file named input has to be present in the same
+ * directory from where the command is called reads the team's output from fie
+ * named output in the same directory
+ */
 #include <bits/stdc++.h>
-const long long INF = 1e4 + 7;
-typedef long long ll;
-typedef unsigned long long ull;
-typedef long double ld;
-const ll md = 1000000007;
-#define PB push_back
-#define MP make_pair
-#define lp(n) for (int i = 0; i < (n); i++)
+
+const int MAX = (int)1e5 + 5;
+
 using namespace std;
-ll n, k;
-vector<bool> prime (INF, true);
-// prime must be a vector if n=1e7
-vector<ll> v;
-// v containes the prime numbers in increasing order
 
-void SieveOfEratosthenes (ll n)
+vector<int> isPrime(MAX, 1);
+vector<int> primes;
 
-{
-    for (int p = 2; p * p <= n; p++) {
-        if (prime[p] == true) {
-            for (int i = p * p; i <= n; i += p) prime[i] = false;
+void sieve() {
+    isPrime[0] = 0;
+    isPrime[1] = 0;
+    for (int i = 2; i * i < MAX; i += 1 + (i != 2)) {
+        if (!isPrime[i])
+            continue;
+        int j = 2 * i;
+        while (j < MAX) {
+            isPrime[j] = 0;
+            j += i;
         }
     }
-    for (ll p = 2; p <= n; p++)
-        if (prime[p]) v.push_back (p);
-}
-void solve ()
-{
-    int n;
-    cin >> n;
+    for (size_t i = 2; i < MAX; i++) {
+        if (isPrime[i])
+            primes.push_back(i);
+    }
 }
 
-int main ()
-{
-    ios_base::sync_with_stdio (false);
-    cin.tie (nullptr);
-    cout.tie (nullptr);
-    // freopen ("2pointersVals.txt", "r", stdin);
-    int times = 1;
-    // cin>>times;
-    SieveOfEratosthenes (INF);
-    cin >> n >> k;
-    ll n2, n3, p1, p2;
-    ll sum;
-    cout << endl;
-    ll count = 0;
-    lp (103)
-    {
-        string line;
-        getline (cin, line);
-        if 
-        // cin >> n2 >> n3 >> p1 >> p2;
+inline bool failedNotEof(const istream &in) {
+    return (bool(in.rdstate() & in.failbit) &&
+            bool(!(in.rdstate() & in.eofbit)));
+}
 
-        if (n2 + n3 + 2 != k) {
-            cout << "MORE K " << n << " " << k << " " << n2 << " " << n3 << " " << p1 << " " << p2 << '\n';
+bool possible(int n, int k) {
+    if (n & 1) {
+        if (k == 2) {
+            return isPrime[n - 2];
+        } else {
+            return n - 3 - (k - 3) * 2 > 2;
         }
-        if (!binary_search (v.begin (), v.end (), p1)) {
-            cout << "NOT PRIME " << n << " " << k << " " << p1 << '\n';
+    } else {
+        return n - (k - 2) * 2 > 2;
+    }
+}
+
+/* using my_map = map<pair<int, int>, bool>; */
+/* my_map mem; */
+
+/* bool possible(int n, int k) { */
+/*     assert(k > 0); */
+/*     if (k == 1) */
+/*         return isPrime[n]; */
+/*     my_map::iterator it; */
+/*     if ((it = mem.find({n, k})) != mem.end()) { */
+/*         return it->second; */
+/*     } */
+/*     for (int i = 0; i < (int)primes.size() && primes[i] <= n; i++) { */
+/*         int p = primes[i]; */
+/*         if (possible(n - p, k - 1)) */
+/*             return mem[{n, k}] = true; */
+/*     } */
+/*     return mem[{n, k}] = false; */
+/* } */
+
+int main() {
+    fstream input("input"); // input file where to find the test cases
+    fstream output(
+        "output"); // output file: the result of the team's submission
+    sieve();
+    int t;
+    input >> t;
+    for (int tt = 1; tt <= t; tt++) {
+        int n, k;
+        input >> n >> k;
+        string res;
+        getline(output, res);
+        if (!output) {
+            cout << "NO\n";
+            exit(EXIT_SUCCESS);
         }
-        if (!binary_search (v.begin (), v.end (), p2)) {
-            cout << "NOT PRIME " << n << " " << k << " " << p2 << '\n';
-        }
-        if (p1 + p2 + n2 * 2 + n3 * 3 != n) {
-            cout << "NOT EQUAL " << n << " " << k << " " << n2 << " " << n3 << " " << p1 << " " << p2 << '\n';
+        if (res == "impossible") {
+            if (possible(n, k)) {
+                cout << "NO: solution is possible but output says impossible "
+                        "in test "
+                     << tt << " n = " << n << " k = " << k << endl;
+                exit(EXIT_SUCCESS);
+            }
+        } else {
+            stringstream in{res};
+            vector<int> v;
+            int x;
+            while (in >> x) {
+                if (x <= 0 || x >= MAX) {
+                    cout << "NO: element out of range in test " << tt
+                         << " n = " << n << " k = " << k << endl;
+                    exit(EXIT_SUCCESS);
+                }
+                if (!isPrime[x]) {
+                    cout << "NO: element " << x << " is not prime in test "
+                         << tt << " n = " << n << " k = " << k << endl;
+                    exit(EXIT_SUCCESS);
+                }
+                v.push_back(x);
+            }
+            if (failedNotEof(in)) {
+                cout << "NO: error in reading sequence of integers in test "
+                     << tt << " n = " << n << " k = " << k << endl;
+                exit(EXIT_SUCCESS);
+            }
+            int sum = 0;
+            for (int el : v)
+                sum += el;
+            if ((int)v.size() != k) {
+                cout << "NO: number of elements is not equal to k in test "
+                     << tt << " n = " << n << " k = " << k << endl;
+                exit(EXIT_SUCCESS);
+            }
+            if (sum != n) {
+                cout << "NO: sum is not equal to n in test " << tt
+                     << " n = " << n << " k = " << k << endl;
+                exit(EXIT_SUCCESS);
+            }
         }
     }
-
+    cout << "YES\n";
     return 0;
 }
