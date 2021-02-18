@@ -16,7 +16,7 @@ void solve()
         cout<<"...";
     cout<<endl;
 }
-
+    
 int main()
 {
 	int t = 1;
