@@ -402,16 +402,19 @@ X painted 2 rows and 1 column in blue, so only 1 cell will remain white.
 \normalsize{    output: STDOUT}
 \end{center}
 \section{Problem Statement.}
-\paragraph{}
-Sandra is a strong independant woman. But she loves shopping so much that she decided to spend at least S dinars to buy clothes.
-\paragraph{}
-there are n different dresses each one with a price $p_i$ ($1<=i<=n$).
-Help Sandra find the minimum integer k so that whatever index j ($1<=j<=n-k+1$) she chooses it is guaranteed 
-that the sum of coins she will collect ($p_j$ + ... + $p_{j+k-1}$) will be greater than or equal to S.
-if Sandra can never collect more than the sum S print "impossible"
+There exists n bags of gold each of which contains $b_i$ golden coins ($1 \le i \le
+ n$) Sandra has to collect at least S golden coins but she does not have much
+ time.\\
+ so she decided to pick k consecutive bags starting from a random index j
+ ($1 \le j \le n - k +1$).\\
+ Help Sandra find the minimum integer k so that whatever index j she chooses it is guaranteed that the sum of coins she will collect ($b_j
+ + ... + b_{j+k-1}$) will be greater than or equal to S.\\
+ if Sandra can never collect more than the sum S print "impossible"
 \section{Input.}
-you will be given as input n ($1<=n<=10^5$) the number of dresses. S ($1<=S<=10^6$) the amount she has to spend.
-and n numbers $p_i$ ($0<=p_i<=10^5$) representing the price of the i-th dress.
+you will be given as input:
+n ($1<=n<=10^5$) the number of bags.\\
+S ($1<=S<=10^6$) the amount of coins she has to collect.\\
+and n numbers $p_i$ ($0<=p_i<=10^5$) representing the number of coins in the i-th bag.
 \section{Output.}
 print k if it exists and "impossible" if it doesn't exist.
 
