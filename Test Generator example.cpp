@@ -1,31 +1,48 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-int randomInt(int l, int r){
-    return uniform_int_distribution<int>(l,r)(rng);
-}
+int randomInt(int l, int r) { return uniform_int_distribution<int>(l, r)(rng); }
 
-string randomString(int n, char l, char r){
-    int len = r-l+1;
+string randomString(int n, char l, char r) {
+    int len = r - l + 1;
     string res;
-    for(int i=1; i<=n; ++i) res += char(l + randomInt(0,len-1));
+    for (int i = 1; i <= n; ++i)
+        res += char(l + randomInt(0, len - 1));
     return res;
 }
 
-int main(){
-    const int tests = 100;
+int digitsNbr(int x) {
+    if (x == 0) {
+        return 1;
+    }
+    int ret{};
+    while (x != 0) {
+        ret++;
+        x /= 10;
+    }
+    return ret;
+}
 
-    for(int i=1; i<=tests; ++i){
+int main() {
+    const int tests = 100;
+    const int width = digitsNbr(tests);
+    for (int i = 1; i <= tests; ++i) {
         stringstream ss;
-        ss << "tests/test" << i << ".in";
-        
+        const int testWidth = digitsNbr(i);
+        string testNumber(width - testWidth, '0');
+        char *testNumberStr = new char[testWidth + 1];
+        sprintf(testNumberStr, "%d", i);
+        testNumber += testNumberStr;
+        ss << "tests/test" << testNumber << ".in";
+        delete[] testNumberStr;
+
         char fileName[20];
         ss >> fileName;
         freopen(fileName, "w", stdout);
-        
-// ------------------------------------------ CHANGE THIS 
+
+        // ------------------------------------------ CHANGE THIS
         // 1 <= k <= 100
         // 1 <= s <= 100,000
         int k = randomInt(1, 100);
